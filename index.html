@@ -488,8 +488,8 @@ function buildLabel(s, r, boxNum, totalBoxes, lpp) {
     <div style="font-size:${fs.sub};">ไปรษณียภัณฑ์ไม่มีจ่าหน้า &nbsp;โดยนำส่งในพื้นที่</div>
     <div style="font-size:${fs.sub};padding-left:1em;">${r.area ? esc(r.area) : '......................................................'}</div>
   </div>
-  <div style="font-size:${fs.sub};margin-bottom:2pt;">กลุ่มเป้าหมายหลัก &nbsp;${r.tmain ? esc(r.tmain) : '......................'}</div>
-  <div style="font-size:${fs.sub};margin-bottom:8pt;">กลุ่มเป้าหมายรอง &nbsp;${r.tsub ? esc(r.tsub) : '......................'}</div>
+  ${r.tmain ? `<div style="font-size:${fs.sub};margin-bottom:2pt;">กลุ่มเป้าหมายหลัก &nbsp;${esc(r.tmain)}</div>` : ''}
+  ${r.tsub ? `<div style="font-size:${fs.sub};margin-bottom:8pt;">กลุ่มเป้าหมายรอง &nbsp;${esc(r.tsub)}</div>` : ''}
   <div style="font-size:${fs.qty};font-weight:bold;margin-bottom:8pt;">จำนวนรวม &nbsp;${fmtNum(r.qty)}&nbsp; ชิ้น</div>
   <div style="border-top:1px solid #000;padding-top:5pt;">
     <div style="font-size:${fs.foot};">ของ &nbsp;${esc(s.name)}</div>
