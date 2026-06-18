@@ -373,8 +373,8 @@ table.dest td input,table.dest td select{padding:5px 7px;font-size:13px;border-r
       </div>
       
       <div class="modal-tabs">
-        <button class="tab-btn active" onclick="switchGuideTab('guide-p2')">บันทึกข้อความ (P2)</button>
-        <button class="tab-btn" onclick="switchGuideTab('guide-p3')">ป้ายปะหน้ากล่อง (P3)</button>
+        <button class="tab-btn active" onclick="switchGuideTab('guide-p2', this)">บันทึกข้อความ (P2)</button>
+        <button class="tab-btn" onclick="switchGuideTab('guide-p3', this)">ป้ายปะหน้ากล่อง (P3)</button>
       </div>
 
       <div style="padding: 16px 24px 0 24px;">
@@ -896,7 +896,7 @@ function openGuideModal() {
 function closeGuideModal() {
   document.getElementById('guide-modal').style.display = 'none';
 }
-function switchGuideTab(tabId) {
+function switchGuideTab(tabId, btn) {
   const contents = document.querySelectorAll('#guide-modal .tab-content');
   contents.forEach(c => c.classList.remove('active-content'));
   
@@ -904,7 +904,7 @@ function switchGuideTab(tabId) {
   buttons.forEach(b => b.classList.remove('active'));
   
   document.getElementById(tabId).classList.add('active-content');
-  event.currentTarget.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 window.addEventListener('click', function(event) {
   const modal = document.getElementById('guide-modal');
