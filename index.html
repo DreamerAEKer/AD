@@ -889,6 +889,8 @@ window.onload = function() {
   const w = window.open(blobUrl, '_blank');
   if (!w) { URL.revokeObjectURL(blobUrl); alert('กรุณาอนุญาต Pop-up สำหรับหน้าเว็บนี้'); return; }
   setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
+}
+
 // ── Guide Modal Functions ──
 function openGuideModal() {
   document.getElementById('guide-modal').style.display = 'flex';
